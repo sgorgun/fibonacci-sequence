@@ -15,7 +15,7 @@ namespace FibonacciTask
         /// Initializes a new instance of the <see cref="FibonacciSequence"/> class.
         /// </summary>
         /// <param name="count">Count of elements in Fibonacci sequence.</param>
-        /// <exception cref="ArgumentException">Thrown if count of elements less than two.</exception>
+        /// <exception cref="ArgumentException">Thrown if count of elements less than one.</exception>
         public FibonacciSequence(int count)
         {
             throw new NotImplementedException();
