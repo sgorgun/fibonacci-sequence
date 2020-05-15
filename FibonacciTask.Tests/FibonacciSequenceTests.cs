@@ -95,7 +95,7 @@ namespace FibonacciTask.Tests
         [TestCase(0)]
         [TestCase(-1)]
         [TestCase(-234)]
-        public void FibonacciSequence_CountOfElementsIsLessThanOne_ThrowArgumentException(int count)
+        public void FibonacciSequence_LengthOfSequenceLessThanOne_ThrowArgumentException(int count)
             => Assert.Throws<ArgumentException>(() =>
                 {
                     var fibonacciSequence = new FibonacciSequence(count);
