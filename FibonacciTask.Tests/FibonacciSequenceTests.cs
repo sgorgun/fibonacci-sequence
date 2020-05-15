@@ -100,6 +100,6 @@ namespace FibonacciTask.Tests
                 {
                     var fibonacciSequence = new FibonacciSequence(count);
                 },
-                message: "Count of elements of sequence cannot be less than 2.");
+                message: "Count of elements of sequence cannot be less than one.");
     }
 }
