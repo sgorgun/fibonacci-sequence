@@ -9,8 +9,11 @@ namespace FibonacciTask
     /// <seealso cref="https://en.wikipedia.org/wiki/Fibonacci_number"/>
     public class FibonacciSequence
     {
-        //TODO: Add necessary code and/or remove this comment.
-
+        private readonly int _count;
+        private BigInteger _current = 1;
+        private BigInteger _previous;
+        private int _index ;
+         
         /// <summary>
         /// Initializes a new instance of the <see cref="FibonacciSequence"/> class.
         /// </summary>
@@ -18,7 +21,11 @@ namespace FibonacciTask
         /// <exception cref="ArgumentException">Thrown if count of elements less than one.</exception>
         public FibonacciSequence(int count)
         {
-            throw new NotImplementedException();
+            this._count = count;
+            if (count < 1)
+            {
+                throw new ArgumentException("Count of elements less than one.");
+            }
         }
 
         /// <summary>
@@ -27,11 +34,7 @@ namespace FibonacciTask
         /// <value>
         /// Value of current element in Fibonacci sequence.
         /// </value>
-        public BigInteger Current
-        {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
-        }
+        public BigInteger Current => _current;
 
         /// <summary>
         /// Moves to the next element in the sequence.
@@ -41,7 +44,15 @@ namespace FibonacciTask
         /// </returns>
         public bool MoveNext()
         {
-            throw new NotImplementedException();
+            if (_index == _count)
+            {
+                return false;
+            }
+                        
+            var temp = _current;
+            _current = _index++ == 0 ? _previous : _current +_previous;
+            _previous = temp;
+            return true;
         }
 
         /// <summary>
@@ -49,7 +60,9 @@ namespace FibonacciTask
         /// </summary>
         public void Reset()
         {
-            throw new NotImplementedException();
+            _current = 1;
+            _previous = 0;
+            _index = 0;
         }
     }
 }
